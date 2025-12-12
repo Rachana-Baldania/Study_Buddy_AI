@@ -1,3 +1,5 @@
+### Study_Buddy_AI (Developed by Rachana Baldania)
+
 ### 1. Initial Setup
 
 - **Push code to GitHub**  
