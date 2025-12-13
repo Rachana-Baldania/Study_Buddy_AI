@@ -1,4 +1,4 @@
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
 mcq_prompt_template = PromptTemplate(
     template=(
@@ -32,4 +32,5 @@ fill_blank_prompt_template = PromptTemplate(
         "Your response:"
     ),
     input_variables=["topic", "difficulty"]
+
 )
