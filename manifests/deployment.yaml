@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: llmops-app
-        image: rachanabaldania/studybuddyai:24
+        image: rachanabaldania/studybuddyai:25
         ports:
         - containerPort: 8501
         env:
