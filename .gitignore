@@ -4,38 +4,3 @@ venv/
 LLMOPS_3.egg-info/
 
 results/
-.venv/
-__pycache__/
-*.pyc
-# Python
-__pycache__/
-*.py[cod]
-*.so
-*.egg-info/
-dist/
-build/
-# Python virtual environments
-venv/
-*/venv/
-.env
-# Virtual environments
-venv/
-VENV/
-env/
-.env/
-.venv/
-*.venv/
-
-# pipenv / poetry
-Pipfile.lock
-poetry.lock
-
-# Jupyter
-.ipynb_checkpoints
-
-# macOS
-.DS_Store
-
-# Editor configs
-.vscode/
-.idea/
