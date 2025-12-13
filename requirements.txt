@@ -2,4 +2,6 @@ langchain
 langchain-groq
 pandas
 streamlit
+langchain-core
 python-dotenv
+langchain-community
