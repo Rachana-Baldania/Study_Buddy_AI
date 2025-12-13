@@ -6,7 +6,7 @@ load_dotenv()
 
 
 def main():
-    st.set_page_config(page_title="Study Buddy AI", page_icon="🎧🎧")
+    st.set_page_config(page_title="Study Buddy AI", page_icon="")
 
     if 'quiz_manager' not in st.session_state:
         st.session_state.quiz_manager = QuizManager()
@@ -20,7 +20,9 @@ def main():
     if 'rerun_trigger' not in st.session_state:
         st.session_state.rerun_trigger = False
 
-    st.title("Study Buddy AI - V4")
+
+    st.title("Welcome to the Study Buddy AI")
+    st.write("This is your AI-powered learning companion. Developed By : Rachana Baldania")
 
     st.sidebar.header("Quiz Settings")
 
@@ -101,3 +103,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
