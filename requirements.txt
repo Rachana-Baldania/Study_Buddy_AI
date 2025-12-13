@@ -1,8 +1,7 @@
-
+langchain
 langchain-groq
 pandas
 streamlit
-
 python-dotenv
 langchain-community
 langchain>=1.1.0
