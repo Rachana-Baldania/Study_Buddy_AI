@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOCKER_HUB_REPO = "rachanabaldania/studybuddyai"
         DOCKER_HUB_CREDENTIALS_ID = "dockerhub-token"
-        IMAGE_TAG = "v${BUILD_NUMBER}"
+        IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
     stages {
         stage('Checkout Github') {
@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building Docker image...'
-                    dockerImage = docker.build("${DOCKER_HUB_REPO}:${IMAGE_TAG}")
+                    dockerImage = docker.build("${DOCKER_HUB_REPO}:${IMAGE_TAG}", "--no-cache .")
                 }
             }
         }
@@ -25,6 +25,32 @@ pipeline {
                     echo 'Pushing Docker image to DockerHub...'
                     docker.withRegistry('https://registry.hub.docker.com' , "${DOCKER_HUB_CREDENTIALS_ID}") {
                         dockerImage.push("${IMAGE_TAG}")
+                        dockerImage.push("latest")
+                    }
+                }
+            }
+        }
+        stage('Update Deployment YAML with New Tag') {
+            steps {
+                script {
+                    sh """
+                    sed -i 's|image: rachanabaldania/studybuddyai:.*|image: rachanabaldania/studybuddyai:${IMAGE_TAG}|' manifests/deployment.yaml
+                    """
+                }
+            }
+        }
+
+        stage('Commit Updated YAML') {
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
+                        sh '''
+                        git config user.name "Rachana-Baldania"
+                        git config user.email "rbaldania2103@gmail.com"
+                        git add manifests/deployment.yaml
+                        git commit -m "[ci skip] Update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
+                        git push https://${GIT_USER}:${GIT_PASS}@github.com/Rachana-Baldania/Study_Buddy_AI.git HEAD:main
+                        '''
                     }
                 }
             }
@@ -55,6 +81,7 @@ pipeline {
         }
     }
 }
+
 
 
 
