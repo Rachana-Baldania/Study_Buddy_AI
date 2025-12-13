@@ -21,8 +21,9 @@ def main():
         st.session_state.rerun_trigger = False
 
 
-    st.title("Welcome to the Study Buddy AI")
-    st.write("This is your AI-powered learning companion. Developed By : Rachana Baldania")
+    st.title("Welcome to the Study Buddy AI!")
+    st.write("This is your AI-powered learning companion")
+     st.write("Developed By : Rachana Baldania")
 
     st.sidebar.header("Quiz Settings")
 
@@ -32,7 +33,7 @@ def main():
             index=0
     )
 
-    topic = st.sidebar.text_input("Enter Topic", placeholder="Kenyan History, geography")
+    topic = st.sidebar.text_input("Enter Topic", placeholder="Indian History, geography")
 
     difficulty = st.sidebar.selectbox(
             "Difficulty Level",
@@ -103,4 +104,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
