@@ -4,4 +4,4 @@ venv/
 LLMOPS_3.egg-info/
 
 results/
-.venv
+.venv/
