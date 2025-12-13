@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: llmops-app
-        image: rachanabaldania/studybuddy:v15
+        image: rachanabaldania/studybuddyai:latest
         ports:
         - containerPort: 8501
         env:
@@ -23,5 +23,6 @@ spec:
             secretKeyRef:
               name: groq-api-secret
               key: GROQ_API_KEY
+
 
 
