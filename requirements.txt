@@ -3,7 +3,3 @@ langchain-groq
 pandas
 streamlit
 python-dotenv
-langchain-community
-
-langchain-core>=1.2.0
-
