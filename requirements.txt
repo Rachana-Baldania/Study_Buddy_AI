@@ -1,7 +1,9 @@
-langchain
+
 langchain-groq
 pandas
 streamlit
-langchain-core
+
 python-dotenv
 langchain-community
+langchain>=1.1.0
+langchain-core>=1.2.0
