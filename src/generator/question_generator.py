@@ -1,4 +1,4 @@
-from langchain_core.output_parsers import PydanticOutputParser
+from langchain.output_parsers import PydanticOutputParser
 from src.models.question_schemas import MCQQuestion,FillBlankQuestion
 from src.prompts.templates import mcq_prompt_template,fill_blank_prompt_template
 from src.llm.groq_client import get_groq_llm
@@ -64,5 +64,6 @@ class QuestionGenerator:
         except Exception as e:
             self.logger.error(f"Failed to generate fillups : {str(e)}")
             raise CustomException("Fill in blanks generation failed" , e)
+
 
 
