@@ -23,7 +23,7 @@ def main():
 
     st.title("Welcome to the Study Buddy AI!")
     st.write("This is your AI-powered learning companion")
-     st.write("Developed By : Rachana Baldania")
+    st.write("Developed By : Rachana Baldania")
 
     st.sidebar.header("Quiz Settings")
 
@@ -104,5 +104,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
